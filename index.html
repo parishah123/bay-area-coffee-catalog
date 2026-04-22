@@ -1,31 +1,58 @@
 <!doctype html>
 <html>
   <head>
-    <title>LA TV Shows | Home</title>
-    <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
+    <title>Bay Area Coffee Shops</title>
+    <meta name="description" content="Coffee shop catalog for Bay Area cities" />
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="scripts.js"></script>
+    <script type="text/javascript" src="scripts.js" defer></script>
   </head>
 
   <body>
     <header class="main-header">
-      <h1 class="title">LA TV Shows</h1>
+      <h1 class="title">Bay Area Coffee Shops</h1>
+      <p class="small-text">Coffee shops in Milpitas and nearby cities</p>
     </header>
+
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Search coffee shop" />
+
+      <select id="cityFilter">
+        <option value="all">All Cities</option>
+        <option value="Milpitas">Milpitas</option>
+        <option value="San Jose">San Jose</option>
+        <option value="Santa Clara">Santa Clara</option>
+        <option value="Fremont">Fremont</option>
+        <option value="Sunnyvale">Sunnyvale</option>
+      </select>
+
+      <select id="sortSelect">
+        <option value="default">Sort</option>
+        <option value="az">A to Z</option>
+        <option value="za">Z to A</option>
+        <option value="high">Rating High-Low</option>
+        <option value="low">Rating Low-High</option>
+      </select>
+    </div>
+
+    <p id="result-count">Showing 0 coffee shops</p>
+
     <div id="card-container"></div>
-    <div class="card" style="display: none">
+
+    <div class="card" id="template-card" style="display: none">
+      <img src="" alt="Coffee shop image" />
       <div class="card-content">
-        <h2>TV Show Title</h2>
-        <img src="" alt="TV Show Poster" />
-        <ul>
-          <li>Bullet Point 1</li>
-          <li>Bullet Point 2</li>
-          <li>Bullet Point 3</li>
-        </ul>
+        <h2>Coffee Shop Name</h2>
+        <p class="city">City:</p>
+        <p class="type">Type:</p>
+        <p class="rating">Rating:</p>
+        <p class="price">Price:</p>
+        <p class="best-for">Best For:</p>
+        <p class="description">Description</p>
       </div>
     </div>
+
     <div class="footer">
-      <button onclick="quoteAlert()">Get A Quote!</button>
-      <button onclick="removeLastCard()">Remove A Card!</button>
+      <button id="remove-button">Remove Last Cafe</button>
     </div>
   </body>
 </html>
